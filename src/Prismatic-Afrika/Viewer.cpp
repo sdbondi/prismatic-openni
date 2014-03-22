@@ -64,8 +64,10 @@ SampleViewer::~SampleViewer()
 
 	ms_self = NULL;
 
-	delete m_pcm;
 	delete m_beatDetect;
+	m_beatDetect = NULL;
+	delete m_pcm;
+	m_pcm = NULL;
 }
 
 void SampleViewer::Finalize()
@@ -431,8 +433,8 @@ void SampleViewer::Display()
 						else
 						{
 							factor[0] = Colors[colorCount][0];
-							factor[1] = Colors[colorCount][1] * cos(bass);
-							factor[2] = Colors[colorCount][2];
+							factor[1] = Colors[colorCount][1] * cos(ts);
+							factor[2] = Colors[colorCount][2] * sin(ts);
 						}
 					}
 					else
