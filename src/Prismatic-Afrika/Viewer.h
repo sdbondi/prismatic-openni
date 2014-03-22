@@ -10,6 +10,9 @@
 
 #include "NiTE.h"
 
+#include "PCM.h"
+#include "BeatDetect.h"
+
 #define MAX_DEPTH 10000
 
 class SampleViewer
@@ -49,6 +52,9 @@ private:
 
 	openni::Device		m_device;
 	nite::UserTracker* m_pUserTracker;
+
+	PCM* m_pcm;
+	BeatDetect* m_beatDetect;
 
 	nite::UserId m_poseUser;
 	uint64_t m_poseTime;

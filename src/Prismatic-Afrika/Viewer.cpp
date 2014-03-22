@@ -8,6 +8,8 @@
 #include <GL/glut.h>
 #include "Viewer.h"
 
+#include <math.h>
+
 #define GL_WIN_SIZE_X	1280
 #define GL_WIN_SIZE_Y	1024
 #define TEXTURE_SIZE	512
@@ -21,7 +23,7 @@ SampleViewer* SampleViewer::ms_self = NULL;
 
 bool g_drawSkeleton = true;
 bool g_drawCenterOfMass = false;
-bool g_drawStatusLabel = true;
+bool g_drawStatusLabel = false;
 bool g_drawBoundingBox = false;
 bool g_drawBackground = true;
 bool g_drawDepth = true;
@@ -50,6 +52,9 @@ SampleViewer::SampleViewer(const char* strSampleName) : m_poseUser(0)
 	ms_self = this;
 	strncpy(m_strSampleName, strSampleName, ONI_MAX_STR);
 	m_pUserTracker = new nite::UserTracker;
+
+	m_pcm = new PCM();
+	m_beatDetect = new BeatDetect(m_pcm);
 }
 SampleViewer::~SampleViewer()
 {
@@ -58,6 +63,9 @@ SampleViewer::~SampleViewer()
 	delete[] m_pTexMap;
 
 	ms_self = NULL;
+
+	delete m_pcm;
+	delete m_beatDetect;
 }
 
 void SampleViewer::Finalize()
@@ -174,9 +182,9 @@ void glPrintString(void *font, const char *str)
 	int i,l = (int)strlen(str);
 
 	for(i=0; i<l; i++)
-	{   
+	{
 		glutBitmapCharacter(font,*str++);
-	}   
+	}
 }
 #endif
 void DrawStatusLabel(nite::UserTracker* pUserTracker, const nite::UserData& user)
@@ -248,6 +256,8 @@ void DrawLimb(nite::UserTracker* pUserTracker, const nite::SkeletonJoint& joint1
 	float coordinates[6] = {0};
 	pUserTracker->convertJointCoordinatesToDepth(joint1.getPosition().x, joint1.getPosition().y, joint1.getPosition().z, &coordinates[0], &coordinates[1]);
 	pUserTracker->convertJointCoordinatesToDepth(joint2.getPosition().x, joint2.getPosition().y, joint2.getPosition().z, &coordinates[3], &coordinates[4]);
+
+    int time = glutGet(GLUT_ELAPSED_TIME);
 
 	coordinates[0] *= GL_WIN_SIZE_X/g_nXRes;
 	coordinates[1] *= GL_WIN_SIZE_Y/g_nYRes;
@@ -334,6 +344,9 @@ void SampleViewer::Display()
 	}
 
 	depthFrame = userTrackerFrame.getDepthFrame();
+	uint64_t ts = userTrackerFrame.getTimestamp();
+
+	float bass = m_beatDetect->bass;
 
 	if (m_pTexMap == NULL)
 	{
@@ -418,7 +431,7 @@ void SampleViewer::Display()
 						else
 						{
 							factor[0] = Colors[colorCount][0];
-							factor[1] = Colors[colorCount][1];
+							factor[1] = Colors[colorCount][1] * cos(bass);
 							factor[2] = Colors[colorCount][2];
 						}
 					}
@@ -428,11 +441,6 @@ void SampleViewer::Display()
 						factor[1] = Colors[*pLabels % colorCount][1];
 						factor[2] = Colors[*pLabels % colorCount][2];
 					}
-//					// Add debug lines - every 10cm
-// 					else if ((*pDepth / 10) % 10 == 0)
-// 					{
-// 						factor[0] = factor[2] = 0;
-// 					}
 
 					int nHistValue = m_pDepthHist[*pDepth];
 					pTex->r = nHistValue*factor[0];
@@ -441,6 +449,11 @@ void SampleViewer::Display()
 
 					factor[0] = factor[1] = factor[2] = 1;
 				}
+				// Add debug lines - every 10cm
+//                else if ((*pDepth / 10) % 10 == 0)
+//                {
+//                    factor[0] = factor[2] = 0;
+//                }
 			}
 
 			pDepthRow += rowSize;
@@ -474,6 +487,8 @@ void SampleViewer::Display()
 	// bottom left
 	glTexCoord2f(0, (float)g_nYRes/(float)m_nTexMapY);
 	glVertex2f(0, GL_WIN_SIZE_Y);
+
+
 
 	glEnd();
 	glDisable(GL_TEXTURE_2D);

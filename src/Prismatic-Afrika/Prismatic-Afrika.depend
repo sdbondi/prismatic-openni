@@ -2,8 +2,10 @@
 1352300900 source:/home/stan/Projects/prismatic/prismatic-openni/src/Prismatic-Afrika/main.cpp
 	"Viewer.h"
 
-1353501787 /home/stan/Projects/prismatic/prismatic-openni/src/Prismatic-Afrika/Viewer.h
+1395528182 /home/stan/Projects/prismatic/prismatic-openni/src/Prismatic-Afrika/Viewer.h
 	"NiTE.h"
+	"PCM.h"
+	"BeatDetect.h"
 
 1354787777 /home/stan/Projects/prismatic/prismatic-openni/src/Prismatic-Afrika/NiTE-2.0.0/Include/NiTE.h
 	"NiteCAPI.h"
@@ -2843,7 +2845,110 @@
 1390768922 source:/home/stan/Projects/prismatic/prismatic-openni/src/Prismatic-Afrika/OpenNI2/ThirdParty/PSCommon/XnLib/Source/XnVector3D.cpp
 	"XnVector3D.h"
 
-1354702709 source:/home/stan/Projects/prismatic/prismatic-openni/src/Prismatic-Afrika/Viewer.cpp
+1395527981 source:/home/stan/Projects/prismatic/prismatic-openni/src/Prismatic-Afrika/Viewer.cpp
 	<GL/glut.h>
 	"Viewer.h"
+	<math.h>
+
+1395526031 source:/home/stan/Projects/prismatic/prismatic-openni/src/Prismatic-Afrika/Shader.cpp
+	"Shader.h"
+	<string.h>
+	<iostream>
+	<stdlib.h>
+	<stdio.h>
+
+1395525755 /home/stan/Projects/prismatic/prismatic-openni/src/Prismatic-Afrika/Shader.h
+	<string>
+	<stdlib.h>
+	<OpenGL/gl.h>
+	<GLUT/glut.h>
+	<OpenGL/glext.h>
+	<stdlib.h>
+	<GL/glew.h>
+	<GL/gl.h>
+	<GL/glut.h>
+	<GL/glext.h>
+
+1395528364 source:/home/stan/Projects/prismatic/prismatic-openni/src/Prismatic-Afrika/BeatDetect.cpp
+	<stdlib.h>
+	<stdio.h>
+	"wipemalloc.h"
+	"Common.h"
+	"PCM.h"
+	<cmath>
+	"BeatDetect.h"
+
+1387537967 /home/stan/Projects/prismatic/prismatic-openni/src/Prismatic-Afrika/wipemalloc.h
+	<malloc.h>
+	<string.h>
+	<stdlib.h>
+	<stdlib.h>
+	<string.h>
+	<stdlib.h>
+	<stdio.h>
+
+1387537967 /home/stan/Projects/prismatic/prismatic-openni/src/Prismatic-Afrika/Common.hpp
+	<vector>
+	<typeinfo>
+	<cstdarg>
+	<cassert>
+	<windows.h>
+	<cstdio>
+	"dlldefs.h"
+	<cstdlib>
+	<float.h>
+	<string>
+
+1387537967 /home/stan/Projects/prismatic/prismatic-openni/src/Prismatic-Afrika/dlldefs.h
+
+1387537967 /home/stan/Projects/prismatic/prismatic-openni/src/Prismatic-Afrika/PCM.hpp
+	"dlldefs.h"
+
+1395527603 /home/stan/Projects/prismatic/prismatic-openni/src/Prismatic-Afrika/BeatDetect.hpp
+	"PCM.hpp"
+	"dlldefs.h"
+
+1387537967 source:/home/stan/Projects/prismatic/prismatic-openni/src/Prismatic-Afrika/fftsg.cpp
+	<math.h>
+	<pthread.h>
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<stdio.h>
+	<stdlib.h>
+
+1395528376 source:/home/stan/Projects/prismatic/prismatic-openni/src/Prismatic-Afrika/PCM.cpp
+	<stdlib.h>
+	<stdio.h>
+	"Common.h"
+	"wipemalloc.h"
+	"fftsg.h"
+	"PCM.h"
+	<cassert>
+	<iostream>
+	<iostream>
+
+1387537967 /home/stan/Projects/prismatic/prismatic-openni/src/Prismatic-Afrika/fftsg.h
+
+1387537967 source:/home/stan/Projects/prismatic/prismatic-openni/src/Prismatic-Afrika/wipemalloc.cpp
+	"wipemalloc.h"
+
+1395528118 /home/stan/Projects/prismatic/prismatic-openni/src/Prismatic-Afrika/BeatDetect.h
+	"PCM.h"
+	"dlldefs.h"
+
+1387537967 /home/stan/Projects/prismatic/prismatic-openni/src/Prismatic-Afrika/PCM.h
+	"dlldefs.h"
+
+1387537967 /home/stan/Projects/prismatic/prismatic-openni/src/Prismatic-Afrika/Common.h
+	<vector>
+	<typeinfo>
+	<cstdarg>
+	<cassert>
+	<windows.h>
+	<cstdio>
+	"dlldefs.h"
+	<cstdlib>
+	<float.h>
+	<string>
 
