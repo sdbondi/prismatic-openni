@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Debug" />
+	<File name="OpenNI2/ThirdParty/PSCommon/XnLib/Source/XnLogAndroidWriter.h" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="OpenNI2/ThirdParty/PSCommon/XnLib/Source/XnEnum.h" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="27" />
+		</Cursor>
+	</File>
+	<File name="OpenNI2/Source/Drivers/PS1080/Sensor/XnSensorDepthStream.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="813" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="OpenNI2/Source/Drivers/PS1080/Include/XnCore.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1710" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="OpenNI2/Source/Core/OniDriverHandler.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1816" topLine="9" />
+		</Cursor>
+	</File>
+	<File name="OpenNI2/Source/Core/OniRecorder.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1781" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="OpenNI2/Source/Drivers/PSLink/DriverImpl/LinkOniStream.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1861" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="OpenNI2/ThirdParty/PSCommon/XnLib/Source/XnLogConsoleWriter.h" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="OpenNI2/ThirdParty/PSCommon/XnLib/Source/XnUSBInternal.h" open="1" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2444" topLine="12" />
+		</Cursor>
+	</File>
+	<File name="Viewer.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="546" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="OpenNI2/Source/Drivers/PSLink/PrimeClient.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="53" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="OpenNI2/Source/Drivers/PS1080/Core/XnBuffer.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1825" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="NiTE-2.0.0/Include/NiTE.h" open="1" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5674" topLine="227" />
+		</Cursor>
+	</File>
+	<File name="OpenNI2/ThirdParty/PSCommon/XnLib/Source/XnLogFileWriter.h" open="1" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="OpenNI2/ThirdParty/PSCommon/XnLib/Source/XnDumpFileWriter.h" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="OpenNI2/ThirdParty/PSCommon/XnLib/ThirdParty/libusb-1.0.9-Android/examples/dpfp.c" open="1" top="1" tabpos="16" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1158" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="OpenNI2/Source/Drivers/PS1080/Core/XnCore.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1786" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="OpenNI2/Source/Drivers/PSLink/LinkProtoLib/XnLinkProtoLibDefs.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="962" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="OpenNI2/Include/OniPlatform.h" open="1" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2212" topLine="0" />
+		</Cursor>
+	</File>
+</CodeBlocks_layout_file>
