@@ -47,7 +47,7 @@ void SampleViewer::glutKeyboard(unsigned char key, int x, int y)
 	SampleViewer::ms_self->OnKey(key, x, y);
 }
 
-SampleViewer::SampleViewer(const char* strSampleName) : m_poseUser(0)
+SampleViewer::SampleViewer(const char* strSampleName, int argc, char** argv) : m_poseUser(0)
 {
 	ms_self = this;
 	strncpy(m_strSampleName, strSampleName, ONI_MAX_STR);
@@ -55,6 +55,9 @@ SampleViewer::SampleViewer(const char* strSampleName) : m_poseUser(0)
 
 	m_pcm = new PCM();
 	m_beatDetect = new BeatDetect(m_pcm);
+
+    m_pulseAudioThread = new QPulseAudioThread(argc, argv, m_pcm);
+    m_pulseAudioThread->start();
 }
 SampleViewer::~SampleViewer()
 {
@@ -63,6 +66,12 @@ SampleViewer::~SampleViewer()
 	delete[] m_pTexMap;
 
 	ms_self = NULL;
+
+    if (m_pulseAudioThread) {
+        m_pulseAudioThread->cleanup();
+        delete(m_pulseAudioThread);
+    }
+	m_pulseAudioThread = 0;
 
 	delete m_beatDetect;
 	m_beatDetect = NULL;

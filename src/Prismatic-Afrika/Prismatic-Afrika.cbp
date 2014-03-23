@@ -13,6 +13,7 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
+					<Add option="-Wall" />
 					<Add option="-g" />
 					<Add option="-DUNIX" />
 					<Add option="-DGLX_GLXEXT_LEGACY" />
@@ -29,21 +30,31 @@
 					<Add directory="OpenNI2/Source/Drivers/PSLink/Protocols/XnLinkProto" />
 					<Add directory="$(JAVA_HOME)/../include" />
 					<Add directory="$(JAVA_HOME)/../include/linux" />
+					<Add directory="/usr/include/qt4" />
+					<Add directory="/usr/share/qt4/include/Qt  " />
+					<Add directory="/usr/include/qt4/QtCore" />
+					<Add directory="/usr/include/pulse" />
 				</Compiler>
 				<Linker>
 					<Add library="GL" />
 					<Add library="glut" />
 					<Add library="OpenNI2" />
 					<Add library="NiTE2" />
+					<Add library="/usr/lib/x86_64-linux-gnu/libQtCore.so" />
+					<Add library="/usr/lib/x86_64-linux-gnu/libQtGui.so" />
+					<Add library="pulse" />
 					<Add directory="OpenNI2/Bin/x64-Release" />
 					<Add directory="NiTE-2.0.0/Redist" />
+					<Add directory="/usr/lib/x86_64-linux-gnu" />
 				</Linker>
 				<ExtraCommands>
+					<Add before="moc QPulseAudioThread.h &gt; QPulseAudioThread.moc" />
 					<Add after="cp -f $(PROJECT_DIR)/NiTE.ini $(PROJECT_DIR)/bin/Debug/" />
 					<Add after="chmod 644 $(PROJECT_DIR)/bin/Debug/NiTE.ini" />
 					<Mode after="always" />
 				</ExtraCommands>
 				<Environment>
+					<Variable name="PA_API_VERSION" value="10" />
 					<Variable name="__cplusplus" value="" />
 				</Environment>
 			</Target>
@@ -66,6 +77,7 @@
 		<Linker>
 			<Add library="GL" />
 			<Add library="X11" />
+			<Add library="/usr/lib/x86_64-linux-gnu/libQtCore.so" />
 		</Linker>
 		<Unit filename="BeatDetect.cpp" />
 		<Unit filename="BeatDetect.h" />
@@ -73,6 +85,8 @@
 		<Unit filename="NiTE.ini" />
 		<Unit filename="PCM.cpp" />
 		<Unit filename="PCM.h" />
+		<Unit filename="QPulseAudioThread.cpp" />
+		<Unit filename="QPulseAudioThread.h" />
 		<Unit filename="Viewer.cpp" />
 		<Unit filename="Viewer.h" />
 		<Unit filename="dlldefs.h" />
@@ -84,6 +98,16 @@
 		<Extensions>
 			<code_completion />
 			<debugger />
+			<DoxyBlocks>
+				<comment_style block="0" line="0" />
+				<doxyfile_project />
+				<doxyfile_build />
+				<doxyfile_warnings />
+				<doxyfile_output />
+				<doxyfile_dot />
+				<general />
+			</DoxyBlocks>
+			<envvars />
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>

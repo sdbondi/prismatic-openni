@@ -8,6 +8,8 @@
 #ifndef _NITE_USER_VIEWER_H_
 #define _NITE_USER_VIEWER_H_
 
+#include "QPulseAudioThread.h"
+
 #include "NiTE.h"
 
 #include "PCM.h"
@@ -18,7 +20,7 @@
 class SampleViewer
 {
 public:
-	SampleViewer(const char* strSampleName);
+	SampleViewer(const char* strSampleName, int argc, char** argv);
 	virtual ~SampleViewer();
 
 	virtual openni::Status Init(int argc, char **argv);
@@ -38,6 +40,8 @@ protected:
 private:
 	SampleViewer(const SampleViewer&);
 	SampleViewer& operator=(SampleViewer&);
+
+    QPulseAudioThread* m_pulseAudioThread;
 
 	static SampleViewer* ms_self;
 	static void glutIdle();
